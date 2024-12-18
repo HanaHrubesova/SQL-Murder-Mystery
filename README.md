@@ -4,7 +4,7 @@ A crime has taken place and the detective needs your help. The detective gave yo
 ![diagram](https://github.com/HanaHrubesova/SQL-Murder-Mystery/blob/main/schema.png)
 
 ## Solving the Murder
-The clue from the the task description is  *..occurred sometime on ​Jan.15, 2018​ and that it took place in ​SQL City​..* . Start searching in the **crime_scene_report** and filer *date* and *city* and *type*.
+The clue from the task description is that *..occurred sometime on ​Jan.15, 2018​ , and that it took place in ​SQL City​..* . Start searching in the **crime_scene_report** and filer *date* and *city* and *type*.
 ``` SQL
 SELECT
     *
@@ -37,7 +37,7 @@ LIMIT
     1
 ```
 ![results of second query](https://github.com/HanaHrubesova/SQL-Murder-Mystery/blob/main/step_2.png)
-To locate the seconfd witness and their testimony.
+To locate the second witness and their testimony.
 ```SQL
 SELECT
     t1.name,
@@ -53,7 +53,7 @@ WHERE
 ```
 ![results of third query](https://github.com/HanaHrubesova/SQL-Murder-Mystery/blob/main/step3.png)
 
-From the testimony of Monthy Schapiro and Annabel Miller, it is posible to filter the perdson matching theyr description. 
+From the testimony of Monthy Schapiro and Annabel Miller, it is possible to filter the person matching their description. 
 ```SQL
 SELECT
     t1.name,
@@ -73,13 +73,14 @@ WHERE
     AND t4.check_in_date='20180109'
 ```
 ![results of fourth query](https://github.com/HanaHrubesova/SQL-Murder-Mystery/blob/main/step_4.png)
-It is interesting that just with the testimony of Monthy Schapiro we get the same result.
 
-When the name *Jeremy Bowers* is input in the **solution ** table, the andwer is :
+Interestingly, we got the same result with Monthy Schapiro's testimony.t.
+
+When the name *Jeremy Bowers* is input in the  *solution* table, the answer is :
 ![Murderer](https://github.com/HanaHrubesova/SQL-Murder-Mystery/blob/main/murderer.png)
 
 
-Okey, so murdere is found, now we need to find a real villan behind thos crime. 
+Okay, so the murderer is found, now we need to find a real villain behind the crime. 
 The Jeremy Bowers interview transcript:
 ```SQL
 SELECT
@@ -93,7 +94,7 @@ WHERE
 ```
 ![the villain ](https://github.com/HanaHrubesova/SQL-Murder-Mystery/blob/main/villain_1.png)
 
-So lets find the described woman 
+So let's find the described woman 
 ```SQL
 SELECT
     t1.name,
@@ -112,3 +113,6 @@ WHERE
     AND t3.event_name='SQL Symphony Concert'
 ```
 ![the villain finished ](https://github.com/HanaHrubesova/SQL-Murder-Mystery/blob/main/villain_2.png)
+
+Now when the name *Miranda Priestly* is checked in table **solution**
+![the villain finished ](https://github.com/HanaHrubesova/SQL-Murder-Mystery/blob/main/result.png)
