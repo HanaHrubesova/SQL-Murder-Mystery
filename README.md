@@ -74,7 +74,7 @@ WHERE
 ```
 ![results of fourth query](https://github.com/HanaHrubesova/SQL-Murder-Mystery/blob/main/step_4.png)
 
-Interestingly, we got the same result with Monthy Schapiro's testimony.t.
+Interestingly, we got the same result with Monthy Schapiro's testimony.
 
 When the name *Jeremy Bowers* is input in the  *solution* table, the answer is :
 ![Murderer](https://github.com/HanaHrubesova/SQL-Murder-Mystery/blob/main/murderer.png)
@@ -101,6 +101,7 @@ SELECT
     t2.car_model,
     t2.hair_color,
     t2.height,
+    t2.gender,
     t3.date,
     t3.event_name
 FROM
@@ -109,7 +110,7 @@ FROM
     JOIN facebook_event_checkin t3 ON t3.person_id=t1.id
 WHERE
     t2.car_model='Model S'
-    AND gender='female'
+    AND t2.gender='female'
     AND t3.event_name='SQL Symphony Concert'
 ```
 ![the villain finished ](https://github.com/HanaHrubesova/SQL-Murder-Mystery/blob/main/villain_2.png)
